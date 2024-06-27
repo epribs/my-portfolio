@@ -1,0 +1,35 @@
+{
+  "headline": "I'm Eric Quinn, a full-stack dev in America.",
+  "subheadline": "I'm a full-stack developer with a passion for creating beautiful, functional, and user-friendly websites and applications. I'm a self-taught developer with a background in graphic design and a love for learning new things. I'm always looking for new opportunities to grow and expand my skills.",
+  "cta": "Learn more about me",
+  "description": "I'm Eric Quinn, a full-stack dev in America. This is my portfolio.",
+  "title": {
+    "default": "My Portfolio",
+    "template": "%s | My Portfolio"
+  },
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "openGraph": {
+    "title": "My Portfolio",
+    "description": "I'm Eric Quinn, a full-stack dev in America. This is my portfolio.",
+    "url": "epribs.com",
+    "siteName": "My Portfolio",
+    "locale": "en_US",
+    "type": "website"
+  },
+  "robots": {
+    "index": true,
+    "follow": true,
+    "googleBot": {
+      "index": true,
+      "follow": true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1
+    }
+  }
+}
