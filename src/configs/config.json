@@ -8,10 +8,10 @@
     "template": "%s | My Portfolio"
   },
   "navigation": {
-    "home": "Home",
-    "about": "About",
-    "projects": "Projects",
-    "contact": "Contact"
+    "home": { "url": "/" },
+    "about": { "url": "/about" },
+    "projects": { "url": "/projects" },
+    "contact": { "url": "mailto:test@example.com" }
   },
   "openGraph": {
     "title": "My Portfolio",
