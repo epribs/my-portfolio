@@ -9,6 +9,8 @@ import Footer from "@/components/footer";
 import { ThemeProvider } from "@/components/themeProvider";
 import { baseUrl } from "./sitemap";
 
+import { NextUIProvider } from "@nextui-org/system";
+
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
@@ -54,12 +56,7 @@ export default function RootLayout({
       )}
     >
       <body className="antialiased max-w-xl mx-4 mt-8 lg:mx-auto">
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
+        <NextUIProvider>
           <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">
             <Navbar />
             {children}
@@ -67,7 +64,7 @@ export default function RootLayout({
             <Analytics />
             <SpeedInsights />
           </main>
-        </ThemeProvider>
+        </NextUIProvider>
       </body>
     </html>
   );
