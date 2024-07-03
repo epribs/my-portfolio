@@ -1,8 +1,8 @@
 export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
-  name: "Next.js + NextUI",
-  description: "Make beautiful websites regardless of your design experience.",
+  name: "My Portfolio",
+  description: "I'm Eric Quinn, a full-stack dev.",
   navItems: [
     {
       label: "Home",
@@ -60,10 +60,23 @@ export const siteConfig = {
     },
   ],
   links: {
-    github: "https://github.com/nextui-org/nextui",
-    twitter: "https://twitter.com/getnextui",
-    docs: "https://nextui.org",
-    discord: "https://discord.gg/9b6yyZKmH4",
-    sponsor: "https://patreon.com/jrgarciadev",
+    github: "https://github.com/epribs",
+    linkedin: "https://www.linkedin.com/in/epribs/",
+  },
+  openGraph: {
+    title: "My Portfolio",
+    description: "I'm Eric Quinn, a full-stack dev. This is my portfolio.",
+    url: "epribs.com",
+    siteName: "My Portfolio",
+    locale: "en_US",
+    type: "website",
+  },
+  robots: {
+    index: false,
+    follow: false,
+    googleBot: {
+      index: false,
+      follow: false,
+    },
   },
 };
