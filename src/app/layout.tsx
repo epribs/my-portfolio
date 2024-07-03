@@ -1,23 +1,34 @@
 import "@/styles/globals.css";
-import type { Metadata } from "next";
+import { Metadata, Viewport } from "next";
+
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
-import { Navbar } from "@/components/nav";
+import { Nav } from "@/components/nav";
+import Footer from "@/components/footer";
+
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import Footer from "@/components/footer";
-import { ThemeProvider } from "@/components/themeProvider";
 import { baseUrl } from "./sitemap";
 
-import { NextUIProvider } from "@nextui-org/system";
+import { Link } from "@nextui-org/link";
+import clsx from "clsx";
+
+import { Providers } from "./providers";
+
+import { siteConfig } from "@/config/site";
+import { fontSans } from "@/config/fonts";
+import { Navbar } from "@/components/navbar";
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: "Next.js Portfolio Starter",
-    template: "%s | Next.js Portfolio Starter",
+    default: siteConfig.name,
+    template: `%s - ${siteConfig.name}`,
   },
-  description: "This is my portfolio.",
+  description: siteConfig.description,
+  icons: {
+    icon: "/favicon.ico",
+  },
   openGraph: {
     title: "My Portfolio",
     description: "This is my portfolio.",
@@ -39,7 +50,12 @@ export const metadata: Metadata = {
   },
 };
 
-const cx = (...classes: any[]) => classes.filter(Boolean).join(" ");
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "white" },
+    { media: "(prefers-color-scheme: dark)", color: "black" },
+  ],
+};
 
 export default function RootLayout({
   children,
@@ -47,24 +63,26 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html
-      lang="en"
-      className={cx(
-        "text-black bg-white dark:text-white dark:bg-black",
-        GeistSans.variable,
-        GeistMono.variable
-      )}
-    >
-      <body className="antialiased max-w-xl mx-4 mt-8 lg:mx-auto">
-        <NextUIProvider>
-          <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">
+    <html suppressHydrationWarning lang="en">
+      <head />
+      <body
+        className={clsx(
+          "min-h-screen bg-background font-sans antialiased",
+          fontSans.variable
+        )}
+      >
+        <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
+          <div className="relative flex flex-col h-screen">
             <Navbar />
-            {children}
-            <Footer />
+            <main className="container mx-auto max-w-7xl pt-16 px-6 flex-grow">
+              {children}
+
+              <Footer />
+            </main>
             <Analytics />
             <SpeedInsights />
-          </main>
-        </NextUIProvider>
+          </div>
+        </Providers>
       </body>
     </html>
   );
