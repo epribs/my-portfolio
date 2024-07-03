@@ -1,5 +1,5 @@
 import { Projects } from "@/components/projects";
-import config from "@/configs/config.json";
+import config from "@/config/config.json";
 
 export default function Page() {
   return (

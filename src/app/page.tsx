@@ -1,5 +1,5 @@
 import { BlogPosts } from "@/components/posts";
-import config from "@/configs/config.json";
+import config from "@/config/config.json";
 
 export default function Page() {
   return (

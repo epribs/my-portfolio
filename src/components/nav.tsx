@@ -1,5 +1,5 @@
 import Link from "next/link";
-import config from "@/configs/config.json";
+import config from "@/config/config.json";
 
 const navItems = config.navigation;
 
