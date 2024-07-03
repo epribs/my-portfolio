@@ -8,9 +8,9 @@ export default function Page() {
         {config.headline}
       </h1>
       <p className="mb-4">{config.subheadline}</p>
-      <div className="my-8">
+      {/* <div className="my-8">
         <BlogPosts />
-      </div>
+      </div> */}
     </section>
   );
 }
