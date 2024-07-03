@@ -1,12 +1,9 @@
-import { BlogPosts } from "@/components/posts";
-import config from "@/config/config.json";
+import { title } from "@/components/primitives";
 
-export default function Page() {
+export default function AboutPage() {
   return (
     <section>
-      <h1 className="mb-8 text-2xl font-semibold tracking-tighter">
-        {`About Me`}
-      </h1>
+      <h1 className={title()}>{`About Me`}</h1>
       <p className="mb-4">{`I'm Eric Quinn, a dynamic Full Stack Developer and aspiring technology leader passionate 
       about building and scaling innovative web solutions. With a rich background in developing robust applications and 
       driving platform strategy, I am skilled in a range of modern programming languages and frameworks, including JavaScript, 
@@ -25,10 +22,6 @@ export default function Page() {
       <p className="mb-4">{`As I look to the future, I am eager to take on new challenges that push the boundaries of 
       what technology can achieve. Through my website, I share insights from my experiences and explore new trends in 
       the tech world.`}</p>
-      <p className="mb-4">{`Thank you for visiting my portfolio. Let's connect and create something great together!`}</p>
-      {/* <div className="my-8">
-        <BlogPosts />
-      </div> */}
     </section>
   );
 }

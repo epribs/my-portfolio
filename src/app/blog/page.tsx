@@ -1,3 +1,4 @@
+import { title } from "@/components/primitives";
 import { BlogPosts } from "@/components/posts";
 
 export const metadata = {
@@ -8,8 +9,10 @@ export const metadata = {
 export default function Page() {
   return (
     <section>
-      <h1 className="font-semibold text-2xl mb-8 tracking-tighter">My Blog</h1>
-      <BlogPosts />
+      <h1 className={title()}>My Blog</h1>
+      <div className="mt-4">
+        <BlogPosts />
+      </div>
     </section>
   );
 }
