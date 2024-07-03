@@ -31,7 +31,7 @@ function Table({ data }: { data: Data }) {
   );
 }
 
-function CustomLink(props) {
+function CustomLink(props: any) {
   let href = props.href;
 
   if (href.startsWith("/")) {
@@ -49,16 +49,16 @@ function CustomLink(props) {
   return <a target="_blank" rel="noopener noreferrer" {...props} />;
 }
 
-function RoundedImage(props) {
+function RoundedImage(props: any) {
   return <Image alt={props.alt} className="rounded-lg" {...props} />;
 }
 
-function Code({ children, ...props }) {
+function Code({ children, ...props }: { children: any; props: any }) {
   let codeHTML = highlight(children);
   return <code dangerouslySetInnerHTML={{ __html: codeHTML }} {...props} />;
 }
 
-function slugify(str) {
+function slugify(str: string) {
   return str
     .toString()
     .toLowerCase()
@@ -69,8 +69,8 @@ function slugify(str) {
     .replace(/\-\-+/g, "-"); // Replace multiple - with single -
 }
 
-function createHeading(level) {
-  const Heading = ({ children }) => {
+function createHeading(level: any) {
+  const Heading = ({ children }: { children: any }) => {
     let slug = slugify(children);
     return React.createElement(
       `h${level}`,
@@ -104,7 +104,7 @@ let components = {
   Table,
 };
 
-export function CustomMDX(props) {
+export function CustomMDX(props: any) {
   return (
     <MDXRemote
       {...props}
