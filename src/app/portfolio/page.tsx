@@ -1,4 +1,4 @@
-import { BlogPosts } from "@/components/posts";
+import { Projects } from "@/components/projects";
 import config from "@/configs/config.json";
 
 export default function Page() {
@@ -8,9 +8,9 @@ export default function Page() {
         {config.headline}
       </h1>
       <p className="mb-4">{config.subheadline}</p>
-      {/* <div className="my-8">
-        <BlogPosts />
-      </div> */}
+      <div className="my-8">
+        <Projects />
+      </div>
     </section>
   );
 }
