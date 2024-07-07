@@ -1,8 +1,8 @@
 {
-  "headline": "I'm Eric Quinn, a full-stack dev.",
+  "headline": "I'm Eric P. Quinn, a full-stack dev.",
   "subheadline": "I'm a full-stack developer with a passion for creating beautiful, functional, and user-friendly websites and applications. I'm a self-taught developer with a background in graphic design and a love for learning new things. I'm always looking for new opportunities to grow and expand my skills.",
   "cta": "Learn more about me",
-  "description": "I'm Eric Quinn, a full-stack dev. This is my portfolio.",
+  "description": "I'm Eric P. Quinn, a full-stack dev. This is my portfolio.",
   "title": {
     "default": "My Portfolio",
     "template": "%s | My Portfolio"
@@ -19,7 +19,7 @@
   },
   "openGraph": {
     "title": "My Portfolio",
-    "description": "I'm Eric Quinn, a full-stack dev. This is my portfolio.",
+    "description": "I'm Eric P. Quinn, a full-stack dev. This is my portfolio.",
     "url": "epribs.com",
     "siteName": "My Portfolio",
     "locale": "en_US",
