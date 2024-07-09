@@ -2,11 +2,15 @@ export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
   name: "My Portfolio",
-  description: "I'm Eric Quinn, a full-stack dev.",
   navItems: [
     {
       label: "Home",
       href: "/",
+      content: {
+        headline: "I'm Eric Quinn, a full-stack dev.",
+        description:
+          "I'm a full-stack developer with a passion for creating beautiful, functional, and user-friendly websites and applications. I'm a self-taught developer with a background in graphic design and a love for learning new things. I'm always looking for new opportunities to grow and expand my skills.",
+      },
     },
     {
       label: "Docs",
@@ -27,6 +31,10 @@ export const siteConfig = {
     {
       label: "Portfolio",
       href: "/portfolio",
+      content: {
+        headline: "My Portfolio",
+        description: "Some of the websites and applications I've created.",
+      },
     },
   ],
   navMenuItems: [
@@ -81,6 +89,9 @@ export const siteConfig = {
     googleBot: {
       index: false,
       follow: false,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
 };

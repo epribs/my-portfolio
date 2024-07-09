@@ -1,16 +1,12 @@
-import { BlogPosts } from "@/components/posts";
-import config from "@/config/config.json";
+import { siteConfig } from "@/config/site";
 
 export default function Page() {
   return (
     <section>
       <h1 className="mb-8 text-2xl font-semibold tracking-tighter">
-        {config.headline}
+        {siteConfig.navItems[0].content.headline}
       </h1>
-      <p className="mb-4">{config.subheadline}</p>
-      {/* <div className="my-8">
-        <BlogPosts />
-      </div> */}
+      <p className="mb-4">{siteConfig.navItems[0].content.description}</p>
     </section>
   );
 }
