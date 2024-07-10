@@ -13,14 +13,14 @@ export const siteConfig = {
           "I'm a full-stack developer with a passion for creating beautiful, functional, and user-friendly websites and applications. I'm a self-taught developer with a background in graphic design and a love for learning new things. I'm always looking for new opportunities to grow and expand my skills.",
       },
     },
-    {
-      label: "Docs",
-      href: "/docs",
-    },
-    {
-      label: "Pricing",
-      href: "/pricing",
-    },
+    // {
+    //   label: "Docs",
+    //   href: "/docs",
+    // },
+    // {
+    //   label: "Pricing",
+    //   href: "/pricing",
+    // },
     {
       label: "Blog",
       href: "/blog",
