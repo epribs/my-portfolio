@@ -10,9 +10,8 @@ export default function Page() {
   return (
     <section>
       <h1 className={title()}>My Blog</h1>
-      <div className="mt-4">
-        <BlogPosts />
-      </div>
+      <p className="mb-4">{`Check back soon...`}</p>
+      <div className="my-8">{/* <BlogPosts /> */}</div>
     </section>
   );
 }

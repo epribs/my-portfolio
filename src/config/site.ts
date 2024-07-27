@@ -14,15 +14,6 @@ export const siteConfig = {
       },
     },
     {
-      label: "Blog",
-      href: "/blog",
-      content: {
-        headline: "My Blog",
-        description:
-          "Some of my thoughts on web development, design, and other topics.",
-      },
-    },
-    {
       label: "About",
       href: "/about",
       content: {
@@ -35,10 +26,19 @@ export const siteConfig = {
     },
     {
       label: "Portfolio",
-      href: "/About",
+      href: "/portfolio",
       content: {
         headline: "My Portfolio",
         description: "Some of the websites and applications I've created.",
+      },
+    },
+    {
+      label: "Blog",
+      href: "/blog",
+      content: {
+        headline: "My Blog",
+        description:
+          "Some of my thoughts on web development, design, and other topics.",
       },
     },
   ],
