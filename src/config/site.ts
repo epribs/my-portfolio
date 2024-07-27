@@ -80,15 +80,6 @@ export const siteConfig = {
     github: "https://github.com/epribs",
     linkedin: "https://www.linkedin.com/in/epribs/",
   },
-  openGraph: {
-    title: "Eric P. Quinn Portfolio",
-    description: "Eric P. Quinn, full stack dev.",
-    url: "epribs.com",
-    siteName: "ericpquinn.com",
-    locale: "en_US",
-    languague: "en",
-    typeName: "website",
-  },
   robots: {
     index: false,
     follow: false,
@@ -96,7 +87,6 @@ export const siteConfig = {
       index: false,
       follow: false,
       maxVideoPreview: -1,
-      maxImagePreview: "large",
       maxSnippet: -1,
     },
   },
