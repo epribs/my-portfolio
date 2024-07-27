@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { CustomMDX } from "@/components/mdx";
-import { formatDate, getProjects } from "@/utils/portfolio";
+import { formatDate, getProjects } from "@/utils/mdx";
 import { baseUrl } from "@/app/sitemap";
 
 interface Params {

@@ -1,14 +1,15 @@
 import { title } from "@/components/primitives";
+import { siteConfig } from "@/config/site";
 
 export default function AboutPage() {
   return (
     <section>
-      <h1 className={title()}>{`About Me`}</h1>
+      <h1 className={title()}>{siteConfig.navItems[2].content?.headline}</h1>
       <p className="mb-4">{`I'm Eric Quinn, a dynamic Full Stack Developer and aspiring technology leader passionate 
       about building and scaling innovative web solutions. With a rich background in developing robust applications and 
       driving platform strategy, I am skilled in a range of modern programming languages and frameworks, including JavaScript, 
       SQL, React.js, and Node.js.`}</p>
-      <p className="mb-4">{`Since beginning my career in 2013, I've honed my skills in full stack development, specializing 
+      <p className="mb-4">{`Since beginning my career, I've honed my skills in full stack development, specializing 
       in both front-end and back-end technologies. My journey has been marked by a steadfast commitment to technical 
       excellence and collaborative success, which is reflected in the scalable and efficient solutions I’ve developed. I 
       currently work at Salesforce, where I enhance platform functionalities and integrate sophisticated systems that serve 
