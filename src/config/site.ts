@@ -13,15 +13,15 @@ export const siteConfig = {
           "I'm a full stack developer with a passion for creating beautiful, functional, and user-friendly websites and applications. I'm a self-taught developer with a background in graphic design and a love for learning new things. I'm always looking for new opportunities to grow and expand my skills.",
       },
     },
-    {
-      label: "Blog",
-      href: "/blog",
-      content: {
-        headline: "My Blog",
-        description:
-          "Some of my thoughts on web development, design, and other topics.",
-      },
-    },
+    // {
+    //   label: "Blog",
+    //   href: "/blog",
+    //   content: {
+    //     headline: "My Blog",
+    //     description:
+    //       "Some of my thoughts on web development, design, and other topics.",
+    //   },
+    // },
     {
       label: "About",
       href: "/about",
@@ -33,14 +33,14 @@ export const siteConfig = {
       SQL, React.js, and Node.js.`,
       },
     },
-    {
-      label: "Portfolio",
-      href: "/portfolio",
-      content: {
-        headline: "My Portfolio",
-        description: "Some of the websites and applications I've created.",
-      },
-    },
+    // {
+    //   label: "Portfolio",
+    //   href: "/portfolio",
+    //   content: {
+    //     headline: "My Portfolio",
+    //     description: "Some of the websites and applications I've created.",
+    //   },
+    // },
   ],
   navMenuItems: [
     {
