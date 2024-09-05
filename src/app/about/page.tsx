@@ -1,28 +1,106 @@
 import { title } from "@/components/primitives";
 import { siteConfig } from "@/config/site";
 
-export default function AboutPage() {
+import { notFound } from "next/navigation";
+import { CustomMDX } from "@/components/mdx";
+
+import { baseUrl } from "@/app/sitemap";
+import { formatDate, getAboutPage } from "@/utils/blog";
+
+interface Params {
+  slug: string;
+}
+
+export async function generateStaticParams() {
+  let posts = getAboutPage();
+
+  return posts.map((post) => ({
+    slug: post.slug,
+  }));
+}
+
+export function generateMetadata() {
+  let post = getAboutPage().find((post) => post?.slug);
+  if (!post) {
+    return;
+  }
+
+  let {
+    title,
+    publishedAt: publishedTime,
+    summary: description,
+    image,
+  } = post.metadata;
+  let ogImage = image
+    ? image
+    : `${baseUrl}/og?title=${encodeURIComponent(title)}`;
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      type: "article",
+      publishedTime,
+      url: `${baseUrl}/${post.slug}`,
+      images: [
+        {
+          url: ogImage,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [ogImage],
+    },
+  };
+}
+
+export default function About() {
+  let post = getAboutPage().find((post) => post?.slug);
+
+  if (!post) {
+    notFound();
+  }
+
   return (
     <section>
-      <h1 className={title()}>{siteConfig.navItems[2].content?.headline}</h1>
-      <p className="mb-4">{`I'm Eric Quinn, a dynamic Full Stack Developer and aspiring technology leader passionate 
-      about building and scaling innovative web solutions. With a rich background in developing robust applications and 
-      driving platform strategy, I am skilled in a range of modern programming languages and frameworks, including JavaScript, 
-      SQL, React.js, and Node.js.`}</p>
-      <p className="mb-4">{`Since beginning my career, I've honed my skills in full stack development, specializing 
-      in both front-end and back-end technologies. My journey has been marked by a steadfast commitment to technical 
-      excellence and collaborative success, which is reflected in the scalable and efficient solutions I’ve developed. I 
-      currently work at Salesforce, where I enhance platform functionalities and integrate sophisticated systems that serve 
-      thousands of users.`}</p>
-      <p className="mb-4">{`My technical prowess is matched by a proven leadership track record. I'm dedicated to fostering 
-      an environment of teamwork and innovation, leading by example and mentoring peers to elevate our collective capabilities. 
-      Annually, I undertake significant leadership projects that not only showcase my skills but also drive innovation and team success.`}</p>
-      <p className="mb-4">{`I am also a lifelong learner, continuously upgrading my skills to keep pace with the latest in 
-      technology. I believe in the power of communication and strive to improve my interpersonal skills to lead more 
-      effectively and make a positive impact on my team and projects.`}</p>
-      <p className="mb-4">{`As I look to the future, I am eager to take on new challenges that push the boundaries of 
-      what technology can achieve. Through my website, I share insights from my experiences and explore new trends in 
-      the tech world.`}</p>
+      <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            headline: post.metadata.title,
+            datePublished: post.metadata.publishedAt,
+            dateModified: post.metadata.publishedAt,
+            description: post.metadata.summary,
+            image: post.metadata.image
+              ? `${baseUrl}${post.metadata.image}`
+              : `/og?title=${encodeURIComponent(post.metadata.title)}`,
+            url: `${baseUrl}/${post.slug}`,
+            author: {
+              "@type": "Person",
+              name: "My Portfolio",
+            },
+          }),
+        }}
+      />
+      <h1 className="title font-semibold text-2xl tracking-tighter">
+        {post.metadata.title}
+      </h1>
+      <div className="flex justify-between items-center mt-2 mb-8 text-sm">
+        <p className="text-sm text-neutral-600 dark:text-neutral-400">
+          {formatDate(post.metadata.publishedAt)}
+        </p>
+      </div>
+      <article className="prose">
+        <CustomMDX source={post.content} />
+      </article>
     </section>
   );
 }
